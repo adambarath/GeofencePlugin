@@ -9,7 +9,7 @@
     <AssemblyVersion>1.5.999</AssemblyVersion>
     <AssemblyFileVersion>1.5.999</AssemblyFileVersion>
     <Version>1.5.999</Version>
-    <PackOnBuild>true</PackOnBuild>
+    <PackOnBuild>false</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
     <DefineConstants>$(DefineConstants);</DefineConstants>
@@ -31,7 +31,7 @@
     <Owners>crossgeeks,rdelrosario</Owners>
     <Authors>Rendy Del Rosario</Authors>
     <Copyright>Copyright 2018 CrossGeeks</Copyright>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
     <!-- Define what happens on build and release -->

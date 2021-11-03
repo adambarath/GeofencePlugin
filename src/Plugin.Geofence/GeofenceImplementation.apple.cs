@@ -68,6 +68,14 @@ namespace Plugin.Geofence
                 pool.InvokeOnMainThread(() =>
                 {
                     locationManager = new CLLocationManager();
+
+                    // This is a Boolean that can be set depending on whether the system is allowed to pause location updates.
+                    // On some device it defaults to true, which can cause the device to stop getting background location updates after about 15 minutes.
+                    locationManager.PausesLocationUpdatesAutomatically = false;
+
+                    // his is a Boolean property, introduced in iOS 9 that can be set to allow an app to receive location updates when suspended.
+                    locationManager.AllowsBackgroundLocationUpdates = true;
+
                     locationManager.DidStartMonitoringForRegion += DidStartMonitoringForRegion;
                     locationManager.RegionEntered += RegionEntered;
                     locationManager.RegionLeft += RegionLeft;
@@ -296,8 +304,8 @@ namespace Plugin.Geofence
 
             Task.Factory.StartNew(async () =>
             {
-              //Checks if device has stayed asynchronously
-              await CheckIfStayed(region.Identifier);
+                //Checks if device has stayed asynchronously
+                await CheckIfStayed(region.Identifier);
             });
         }
         /// <summary>
@@ -746,8 +754,8 @@ namespace Plugin.Geofence
                         {
                             if (buttonArgs.ButtonIndex == 1)
                             {
-                              // Send the user to the Settings for this app
-                              NSUrl settingsUrl = new NSUrl(UIApplication.OpenSettingsUrlString);
+                                // Send the user to the Settings for this app
+                                NSUrl settingsUrl = new NSUrl(UIApplication.OpenSettingsUrlString);
                                 UIApplication.SharedApplication.OpenUrl(settingsUrl);
                             }
                             isPromptingLocationPermission = false;
