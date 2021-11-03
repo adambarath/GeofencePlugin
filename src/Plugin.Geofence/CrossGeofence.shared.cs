@@ -123,7 +123,7 @@ namespace Plugin.Geofence
     static IGeofence CreateGeofence()
     {
 
-#if NETSTANDARD2_0
+#if NETSTANDARD2_1 || NETSTANDARD2_0
             return null;
 #else
             System.Diagnostics.Debug.WriteLine("Creating GeofenceImplementation");

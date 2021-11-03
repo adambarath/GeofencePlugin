@@ -1,7 +1,7 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;MonoAndroid90;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
     <AssemblyName>Plugin.Geofence</AssemblyName>
     <RootNamespace>Plugin.Geofence</RootNamespace>
     <PackageId>Plugin.Geofence</PackageId>
@@ -65,10 +65,9 @@
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0.6" />
+    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0.7" />
     <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.8" />
-    <PackageReference Include="Xamarin.GooglePlayServices.Location" Version="117.1.0" />
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Location" Version="118.0.0" />
      <Compile Include="**\*.android.cs" />
      <Compile Include="**\*.android.*.cs" />
   </ItemGroup>

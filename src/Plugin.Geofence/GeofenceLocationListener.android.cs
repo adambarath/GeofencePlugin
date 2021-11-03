@@ -15,7 +15,7 @@ namespace Plugin.Geofence
         /// Location listener instance
         /// </summary>
         public static GeofenceLocationListener SharedInstance { get { return sharedInstance; } }
-        
+
         private GeofenceLocationListener()
         {
 
@@ -23,8 +23,8 @@ namespace Plugin.Geofence
         public override void OnLocationResult(LocationResult result)
         {
             //Location Updated
-            var currentGeofenceImplementation = CrossGeofence.Current as GeofenceImplementation; 
-                  
+            var currentGeofenceImplementation = CrossGeofence.Current as GeofenceImplementation;
+
             // Check if we need to reset the listener in case there was an error, e.g. location services turned off
             if (currentGeofenceImplementation.LocationHasError)
             {

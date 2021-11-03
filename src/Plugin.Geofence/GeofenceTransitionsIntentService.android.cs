@@ -2,11 +2,9 @@
 using Android.Content;
 using Android.Media;
 using Android.OS;
-using Android.Support.V4.App;
+using AndroidX.Core.App;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Plugin.Geofence
@@ -19,7 +17,7 @@ namespace Plugin.Geofence
     public class GeofenceTransitionsIntentService : IntentService
     {
         static int NotificationId = 0;
-        const int  NotificationMaxId = 6;
+        const int NotificationMaxId = 6;
         static object IntentLock = new object();
 
         /// <summary>
@@ -176,7 +174,7 @@ namespace Plugin.Geofence
         /// <param name="message"></param>
         public void CreateNotification(string title, string message)
         {
-           
+
             try
             {
 
@@ -229,11 +227,11 @@ namespace Plugin.Geofence
                         .SetContentText(message); // the message to display.
 
                 // Set the icon resource if we have one
-                if(CrossGeofence.LargeIconResource != null)
+                if (CrossGeofence.LargeIconResource != null)
                     builder.SetLargeIcon(CrossGeofence.LargeIconResource);
 
                 // Set the color if we have one
-                if(CrossGeofence.Color != 0)
+                if (CrossGeofence.Color != 0)
                     builder.SetColor(CrossGeofence.Color);
 
 
@@ -255,7 +253,7 @@ namespace Plugin.Geofence
             {
                 System.Diagnostics.Debug.WriteLine(string.Format("{0} - {1}", CrossGeofence.Id, ex1.ToString()));
             }
-           
+
         }
     }
 }
